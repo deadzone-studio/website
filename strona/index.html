@@ -4,29 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deadzone Studio</title>
-<meta name="description" content="Open source for Linux desktops and Android phones, made by M4rtwy in Poland. Pairlume, ricepick and more.">
+<meta name="description" content="A small studio from Poland making open-source tools for Linux desktops and Android phones: Pairlume, ricepick and more. No accounts, no tracking, code public from the first line.">
 <meta name="color-scheme" content="dark">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=4">
 <link rel="icon" href="img/mark.svg" type="image/svg+xml">
 </head>
 <body>
 <header class="top">
-  <a class="brand" href="./" aria-label="Deadzone Studio">
-    <img src="img/mark.svg" alt="" width="34" height="34">
+  <a class="brand" href="#projects" aria-label="Deadzone Studio">
+    <svg class="mark" viewBox="0 0 64 64" width="38" height="38" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c08bff"/><stop offset="1" stop-color="#7aa2ff"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="#0f1526"/><g class="spin"><circle class="arc" cx="32" cy="32" r="18" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-dasharray="86 27.1" transform="rotate(-62 32 32)"/></g><circle class="dot" cx="32" cy="32" r="5.5" fill="#e8edf8"/></svg>
     <span>Deadzone Studio</span>
   </a>
-  <p class="who">Open source for Linux desktops and Android phones. Made by <a href="https://github.com/M4rtwy">M4rtwy</a> in Poland.</p>
-  <nav>
-    <a href="https://github.com/M4rtwy">GitHub</a>
+  <nav class="tabs" aria-label="Sections">
+    <span class="slide" aria-hidden="true"></span>
+    <a href="#projects">Projects</a>
+    <a href="#studio">Studio</a>
+    <a href="#rules">How we build</a>
+    <a href="#join">Get involved</a>
   </nav>
 </header>
 
 <main>
-  <article class="card lead" id="pairlume">
+<!-- ============ projects ============ -->
+<section class="page" data-page="projects" aria-label="Projects">
+  <article class="card lead">
     <div class="text">
-      <p class="kicker">Most of our time goes here</p>
+      <p class="kicker">Our main project</p>
       <h1>Pairlume</h1>
-      <p class="say">Your Android phone and your Hyprland desktop as one: texts, calls and their voice on the computer, paired by a shake.</p>
+      <p class="say">Your Android phone and your Hyprland desktop as one. Read and send texts, answer calls and talk through the computer, after pairing with a shake.</p>
       <ol class="stages">
         <li class="done"><b>0</b><span>Project, protocol, tests</span><i>done</i></li>
         <li class="done"><b>1</b><span>Pairing: shake, QR, digits</span><i>done</i></li>
@@ -34,19 +39,26 @@
         <li class="now"><b>3</b><span>Calls, voice over Bluetooth</span><i>trying on phones</i></li>
         <li><b>4</b><span>Notifications</span><i>next</i></li>
       </ol>
-      <p class="facts"><span data-repo="M4rtwy/pairlume" data-show="pushed">Rust, QML, Kotlin</span> <span data-repo="M4rtwy/pairlume" data-show="stars"></span> <span>GPL-3.0</span></p>
-      <p class="go"><a class="btn fill" href="https://github.com/M4rtwy/pairlume">Source</a><a class="btn" href="https://github.com/M4rtwy/pairlume/blob/main/docs/protocol.md">How it stays private</a></p>
+      <p class="facts"><span data-repo="M4rtwy/pairlume" data-show="pushed">Rust, QML, Kotlin</span> <span data-commits="M4rtwy/pairlume"></span> <span>GPL-3.0</span></p>
+      <p class="go"><a class="btn fill" href="https://github.com/M4rtwy/pairlume">Source</a><a class="btn" href="https://github.com/M4rtwy/pairlume/releases">Download</a></p>
     </div>
-    <figure class="shots">
-      <img class="big" src="img/texts.webp" alt="Pairlume's texts: a list of conversations and one conversation, in dark cards" width="1600" height="866">
-      <div class="two">
-        <img src="img/pairing.webp" alt="Pairing: shake the phone, scan a code, compare six digits, connected" width="1600" height="522">
-        <img src="img/calls.webp" alt="A call on the computer: ringing, answered, missed" width="1400" height="572">
+    <div class="show">
+      <div class="pills" role="tablist" aria-label="What Pairlume does">
+        <span class="slide" aria-hidden="true"></span>
+        <button role="tab" aria-selected="true" data-shot="0">Texts</button>
+        <button role="tab" aria-selected="false" data-shot="1">Calls</button>
+        <button role="tab" aria-selected="false" data-shot="2">Pairing</button>
       </div>
-    </figure>
+      <figure class="stage-shots">
+        <img class="on" src="img/window.webp" alt="The texts window: conversations on the left, one conversation on the right" width="1000" height="680">
+        <img src="img/calls.webp" alt="A call on the computer: ringing, answered, missed" width="1400" height="572">
+        <img src="img/pairing.webp" alt="Pairing: shake the phone, scan a code, compare six digits, connected" width="1960" height="640">
+      </figure>
+      <p class="caption" aria-live="polite">Conversations from the phone, a code from a text copied with one click, a counter that says how many texts a long message will cost.</p>
+    </div>
   </article>
 
-  <section class="rest" aria-label="Other projects">
+  <div class="rest">
     <article class="card small">
       <h2>ricepick</h2>
       <p class="say">A catalog of Hyprland rices you can browse, preview and download. It never runs anything a rice ships.</p>
@@ -67,12 +79,64 @@
         <li><a href="https://github.com/shadowww-dev/DarkShadowShell/pull/31">The lyrics widget finds songs it missed</a><i data-pr="shadowww-dev/DarkShadowShell/31">sent</i></li>
       </ul>
     </article>
-  </section>
+  </div>
+</section>
+
+<!-- ============ studio ============ -->
+<section class="page" data-page="studio" aria-label="Studio" hidden>
+  <article class="card about">
+    <div class="zone" aria-hidden="true"><i></i><i></i><i></i><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="18" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-dasharray="86 27.1" transform="rotate(-62 32 32)"/><circle cx="32" cy="32" r="5.5" fill="#e8edf8"/></svg></div>
+    <div class="text">
+      <p class="kicker">Deadzone Studio</p>
+      <h1>We make the things we were missing.</h1>
+      <p class="say">A dead zone is where the signal does not reach. Our desktops were one: the phone in one hand, Linux on the screen, and nothing between them. So we started filling it.</p>
+      <p>Deadzone Studio is <a href="https://github.com/M4rtwy">M4rtwy</a>, from Poland. Pairlume is built and tried on the computer and the phone we use every day: CachyOS with Hyprland, and an ordinary Android phone.</p>
+      <p>The work is open from the first line: you can read every change, take it apart, or send a better one.</p>
+    </div>
+  </article>
+  <div class="numbers">
+    <div class="card num"><b>3</b><span>public projects, and fixes for others</span></div>
+    <div class="card num"><b data-commits-only="M4rtwy/pairlume">&nbsp;</b><span>changes in Pairlume so far</span></div>
+    <div class="card num"><b>0</b><span>accounts, ads or trackers in Pairlume</span></div>
+  </div>
+</section>
+
+<!-- ============ how we build ============ -->
+<section class="page" data-page="rules" aria-label="How we build" hidden>
+  <ol class="rules">
+    <li class="card"><b>1</b><h2>Your things stay with you</h2><p>Pairlume talks to your phone over your own network, with TLS on both ends. There is no server of ours in between, no account, and nothing from the phone is written to disk.</p></li>
+    <li class="card"><b>2</b><h2>Off until you say yes</h2><p>A paired phone may do nothing at first. Texts, calls and everything after them are switched on one by one, on the computer and on the phone.</p></li>
+    <li class="card"><b>3</b><h2>Nothing runs that you did not ask for</h2><p>ricepick shows you a rice and downloads it, and never runs the scripts it ships. You decide what runs on your computer.</p></li>
+    <li class="card"><b>4</b><h2>It belongs on your desktop</h2><p>Colors come from your wallpaper, windows follow your Hyprland, and everything works from the keyboard.</p></li>
+    <li class="card"><b>5</b><h2>Public from the first line</h2><p>The code is on GitHub from the first commit, under GPL-3.0. What you run is what you can read.</p></li>
+  </ol>
+</section>
+
+<!-- ============ get involved ============ -->
+<section class="page" data-page="join" aria-label="Get involved" hidden>
+  <div class="join">
+    <article class="card small">
+      <h2>Try it</h2>
+      <p class="say">Pairlume needs a Linux desktop with Hyprland and an Android 10 phone. The downloads and how to install them are on the releases page.</p>
+      <p class="go"><a class="btn fill" href="https://github.com/M4rtwy/pairlume/releases">Releases</a></p>
+    </article>
+    <article class="card small">
+      <h2>Tell us what broke</h2>
+      <p class="say">A bug, a phone that does not pair, a window that looks wrong on your setup: open an issue with what you did and what you saw.</p>
+      <p class="go"><a class="btn" href="https://github.com/M4rtwy/pairlume/issues/new">Pairlume issue</a><a class="btn" href="https://github.com/M4rtwy/ricepick/issues/new">ricepick issue</a></p>
+    </article>
+    <article class="card small">
+      <h2>Send a change</h2>
+      <p class="say">Pull requests are welcome. Pairlume's contributing guide says how it is built and tested.</p>
+      <p class="go"><a class="btn" href="https://github.com/M4rtwy/pairlume/blob/main/CONTRIBUTING.md">Contributing</a></p>
+    </article>
+  </div>
+</section>
 </main>
 
 <footer>
-  <p>Deadzone Studio is M4rtwy. Every project has its own licence; the code is on GitHub and always will be.</p>
+  <p>Deadzone Studio · every project has its own licence · the code is on GitHub and always will be</p>
 </footer>
-<script src="live.js?v=1" defer></script>
+<script src="app.js?v=4" defer></script>
 </body>
 </html>
