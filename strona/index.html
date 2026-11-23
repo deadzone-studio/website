@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadzone Studio</title>
+<meta name="description" content="Open source for Linux desktops and Android phones, made by M4rtwy in Poland. Pairlume, ricepick and more.">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="style.css?v=1">
+<link rel="icon" href="img/mark.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./" aria-label="Deadzone Studio">
+    <img src="img/mark.svg" alt="" width="34" height="34">
+    <span>Deadzone Studio</span>
+  </a>
+  <p class="who">Open source for Linux desktops and Android phones. Made by <a href="https://github.com/M4rtwy">M4rtwy</a> in Poland.</p>
+  <nav>
+    <a href="https://github.com/M4rtwy">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <article class="card lead" id="pairlume">
+    <div class="text">
+      <p class="kicker">Most of our time goes here</p>
+      <h1>Pairlume</h1>
+      <p class="say">Your Android phone and your Hyprland desktop as one: texts, calls and their voice on the computer, paired by a shake.</p>
+      <ol class="stages">
+        <li class="done"><b>0</b><span>Project, protocol, tests</span><i>done</i></li>
+        <li class="done"><b>1</b><span>Pairing: shake, QR, digits</span><i>done</i></li>
+        <li class="done"><b>2</b><span>Texts: window, panel, bubbles</span><i>done</i></li>
+        <li class="now"><b>3</b><span>Calls, voice over Bluetooth</span><i>trying on phones</i></li>
+        <li><b>4</b><span>Notifications</span><i>next</i></li>
+      </ol>
+      <p class="facts"><span data-repo="M4rtwy/pairlume" data-show="pushed">Rust, QML, Kotlin</span> <span data-repo="M4rtwy/pairlume" data-show="stars"></span> <span>GPL-3.0</span></p>
+      <p class="go"><a class="btn fill" href="https://github.com/M4rtwy/pairlume">Source</a><a class="btn" href="https://github.com/M4rtwy/pairlume/blob/main/docs/protocol.md">How it stays private</a></p>
+    </div>
+    <figure class="shots">
+      <img class="big" src="img/texts.webp" alt="Pairlume's texts: a list of conversations and one conversation, in dark cards" width="1600" height="866">
+      <div class="two">
+        <img src="img/pairing.webp" alt="Pairing: shake the phone, scan a code, compare six digits, connected" width="1600" height="522">
+        <img src="img/calls.webp" alt="A call on the computer: ringing, answered, missed" width="1400" height="572">
+      </div>
+    </figure>
+  </article>
+
+  <section class="rest" aria-label="Other projects">
+    <article class="card small">
+      <h2>ricepick</h2>
+      <p class="say">A catalog of Hyprland rices you can browse, preview and download. It never runs anything a rice ships.</p>
+      <p class="facts"><span data-repo="M4rtwy/ricepick" data-show="pushed">Python, GTK 4</span> <span data-repo="M4rtwy/ricepick" data-show="stars"></span></p>
+      <p class="go"><a class="btn" href="https://github.com/M4rtwy/ricepick">Source</a><a class="btn" href="https://github.com/M4rtwy/ricepick-db">Add a rice</a></p>
+    </article>
+    <article class="card small">
+      <h2>CS Simulator</h2>
+      <p class="say">Open CS cases, upgrade skins, sign trade-up contracts and do daily missions, all with pretend money, in a browser.</p>
+      <p class="facts"><span data-repo="M4rtwy/CSSimulator" data-show="pushed">JavaScript</span> <span data-repo="M4rtwy/CSSimulator" data-show="stars"></span></p>
+      <p class="go"><a class="btn" href="https://github.com/M4rtwy/CSSimulator">Source</a></p>
+    </article>
+    <article class="card small help">
+      <h2>Helping others</h2>
+      <p class="say">Fixes sent to <a href="https://github.com/shadowww-dev/DarkShadowShell">DarkShadowShell</a>, the Hyprland shell we use every day.</p>
+      <ul class="prs">
+        <li><a href="https://github.com/shadowww-dev/DarkShadowShell/pull/30">The launcher opens at once after the shell restarts by itself</a><i data-pr="shadowww-dev/DarkShadowShell/30">sent</i></li>
+        <li><a href="https://github.com/shadowww-dev/DarkShadowShell/pull/31">The lyrics widget finds songs it missed</a><i data-pr="shadowww-dev/DarkShadowShell/31">sent</i></li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+<footer>
+  <p>Deadzone Studio is M4rtwy. Every project has its own licence; the code is on GitHub and always will be.</p>
+</footer>
+<script src="live.js?v=1" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Deadzone Studio (deadzone.m4rtwy-home.pl): a static page
+services:
+  deadzone:
+    image: nginx:1.31.8-alpine
+    container_name: deadzone
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - "192.168.100.14:8897:80"
+    volumes:
+      - ./strona:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
