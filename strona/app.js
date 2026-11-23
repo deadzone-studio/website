@@ -143,3 +143,11 @@ function countUp() {
 
 show(location.hash.slice(1), true);
 pick(0);
+
+// "Copy" next to the address: says it, then goes back
+for (const b of document.querySelectorAll("[data-copy]")) {
+  b.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Copied"; } catch { b.textContent = "Select it above"; }
+    setTimeout(() => { b.textContent = "Copy"; }, 1600);
+  });
+}

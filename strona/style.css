@@ -156,3 +156,9 @@ footer { color: var(--dim); font-size: 13px; padding: 26px 8px 0; }
   *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
   html { scroll-behavior: auto; }
 }
+
+/* the address, and a button that copies it */
+.mail { margin-top: var(--gap); padding: 26px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
+.mail .say { color: var(--dim); font-size: 15px; margin: 6px 0 0; }
+.mail .btn.fill { overflow-wrap: anywhere; }
+button.btn { cursor: pointer; }
